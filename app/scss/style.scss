@@ -1,0 +1,115 @@
+@import "fonts";
+@import "reset";
+
+.main {
+    width: 100%;
+    height: 100vh;
+    position: relative;
+    overflow: hidden;
+    &__video {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        &::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, rgba(0,0,0,1) 17%, transparent 50%);
+            @media screen and (max-width: 1024px) {
+                background: linear-gradient(90deg, rgba(0,0,0,1) 25%, transparent 60%);
+            }
+            @media (orientation: portrait) {
+                background: linear-gradient(0deg, rgba(0,0,0,1) 29%, transparent 72%);
+            }
+        }
+    }
+
+    &__video-item {
+        min-width: 100%; 
+        min-height: 100%;
+        width: auto;
+        height: auto;
+        @supports (object-fit: cover) {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+
+    &__title {
+        position: relative;
+        z-index: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        max-width: 430px;
+        height: 100%;
+        margin-left: 14%;
+        animation: fadein 2s;
+        @media (orientation: portrait) {
+            justify-content: flex-end;
+            margin: 0 auto;
+            align-items: center;
+        }
+        @media screen and (max-width: 1024px) {
+            max-width: 295px;
+        }
+        @media screen and (max-width: 568px) {
+            max-width: 218px;
+            margin-left: 9%;
+            @media (orientation: portrait) {
+                margin: 0 auto;
+            }
+        }
+    }
+
+    &__title-title {
+        margin-bottom: 69px;
+        max-width: 430px;
+        @media screen and (max-width: 1024px) {
+            margin-bottom: 33px;
+        }
+    }
+
+    &__title-img {
+        width: 100%;
+        height: auto;
+    }
+
+    &__title-text {
+        line-height: 24px;
+        letter-spacing: 26px;
+        text-transform: uppercase;
+        color: #fff;
+        margin-right: -20px;
+        @media (orientation: portrait) {
+            margin-bottom: 60%;
+        }
+        @media screen and (max-width: 1024px) {
+            line-height: 24px;
+            letter-spacing: 18px;
+            font-size: 14px;
+        }
+        @media screen and (max-width: 568px) {
+            font-size: 12px;
+            letter-spacing: 12px;
+            @media (orientation: portrait) {
+                margin-bottom: 20%;
+            }
+        }
+    }
+}
+
+@keyframes fadein {
+    from {
+        opacity:0;
+    }
+    to {
+        opacity:1;
+    }
+}

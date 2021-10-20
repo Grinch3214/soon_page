@@ -1,0 +1,239 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap");
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
+html {
+  height: 100%;
+}
+
+body {
+  line-height: 1;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+blockquote, q {
+  quotes: none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+html, body {
+  scroll-behavior: smooth;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  font-size: 20px;
+}
+
+.main {
+  width: 100%;
+  height: 100vh;
+  position: relative;
+  overflow: hidden;
+}
+
+.main__video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+}
+
+.main__video::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: -webkit-gradient(linear, left top, right top, color-stop(17%, black), color-stop(50%, transparent));
+  background: -o-linear-gradient(left, black 17%, transparent 50%);
+  background: linear-gradient(90deg, black 17%, transparent 50%);
+}
+
+@media screen and (max-width: 1024px) {
+  .main__video::before {
+    background: -webkit-gradient(linear, left top, right top, color-stop(25%, black), color-stop(60%, transparent));
+    background: -o-linear-gradient(left, black 25%, transparent 60%);
+    background: linear-gradient(90deg, black 25%, transparent 60%);
+  }
+}
+
+@media (orientation: portrait) {
+  .main__video::before {
+    background: -webkit-gradient(linear, left bottom, left top, color-stop(29%, black), color-stop(72%, transparent));
+    background: -o-linear-gradient(bottom, black 29%, transparent 72%);
+    background: linear-gradient(0deg, black 29%, transparent 72%);
+  }
+}
+
+.main__video-item {
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+}
+
+@supports ((-o-object-fit: cover) or (object-fit: cover)) {
+  .main__video-item {
+    width: 100%;
+    height: 100%;
+    -o-object-fit: cover;
+       object-fit: cover;
+  }
+}
+
+.main__title {
+  position: relative;
+  z-index: 1;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  max-width: 430px;
+  height: 100%;
+  margin-left: 14%;
+  -webkit-animation: fadein 2s;
+          animation: fadein 2s;
+}
+
+@media (orientation: portrait) {
+  .main__title {
+    -webkit-box-pack: end;
+        -ms-flex-pack: end;
+            justify-content: flex-end;
+    margin: 0 auto;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .main__title {
+    max-width: 295px;
+  }
+}
+
+@media screen and (max-width: 568px) {
+  .main__title {
+    max-width: 218px;
+    margin-left: 9%;
+  }
+}
+
+@media screen and (max-width: 568px) and (orientation: portrait) {
+  .main__title {
+    margin: 0 auto;
+  }
+}
+
+.main__title-title {
+  margin-bottom: 69px;
+  max-width: 430px;
+}
+
+@media screen and (max-width: 1024px) {
+  .main__title-title {
+    margin-bottom: 33px;
+  }
+}
+
+.main__title-img {
+  width: 100%;
+  height: auto;
+}
+
+.main__title-text {
+  line-height: 24px;
+  letter-spacing: 26px;
+  text-transform: uppercase;
+  color: #fff;
+  margin-right: -20px;
+}
+
+@media (orientation: portrait) {
+  .main__title-text {
+    margin-bottom: 60%;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .main__title-text {
+    line-height: 24px;
+    letter-spacing: 18px;
+    font-size: 14px;
+  }
+}
+
+@media screen and (max-width: 568px) {
+  .main__title-text {
+    font-size: 12px;
+    letter-spacing: 12px;
+  }
+}
+
+@media screen and (max-width: 568px) and (orientation: portrait) {
+  .main__title-text {
+    margin-bottom: 20%;
+  }
+}
+
+@-webkit-keyframes fadein {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadein {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
