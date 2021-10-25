@@ -66,12 +66,24 @@ html, body {
   overflow: hidden;
 }
 
+@media screen and (max-width: 1024px) and (orientation: portrait) {
+  .main {
+    background: #000;
+  }
+}
+
 .main__video {
   position: absolute;
   top: 0;
   left: 0;
   width: 100vw;
   height: 100vh;
+}
+
+@media screen and (max-width: 1024px) and (orientation: portrait) {
+  .main__video {
+    height: 70%;
+  }
 }
 
 .main__video::before {
@@ -88,17 +100,37 @@ html, body {
 
 @media screen and (max-width: 1024px) {
   .main__video::before {
-    background: -webkit-gradient(linear, left top, right top, color-stop(25%, black), color-stop(60%, transparent));
-    background: -o-linear-gradient(left, black 25%, transparent 60%);
-    background: linear-gradient(90deg, black 25%, transparent 60%);
+    background: -webkit-gradient(linear, left top, right top, color-stop(33%, black), color-stop(70%, transparent));
+    background: -o-linear-gradient(left, black 33%, transparent 70%);
+    background: linear-gradient(90deg, black 33%, transparent 70%);
   }
 }
 
 @media (orientation: portrait) {
   .main__video::before {
-    background: -webkit-gradient(linear, left bottom, left top, color-stop(29%, black), color-stop(72%, transparent));
-    background: -o-linear-gradient(bottom, black 29%, transparent 72%);
-    background: linear-gradient(0deg, black 29%, transparent 72%);
+    background: -webkit-gradient(linear, left bottom, left top, color-stop(44%, black), color-stop(66%, transparent));
+    background: -o-linear-gradient(bottom, black 44%, transparent 66%);
+    background: linear-gradient(0deg, black 44%, transparent 66%);
+  }
+}
+
+@media screen and (max-width: 1024px) and (orientation: portrait) {
+  .main__video::before {
+    background: -webkit-gradient(linear, left bottom, left top, color-stop(10%, black), color-stop(45%, transparent));
+    background: -o-linear-gradient(bottom, black 10%, transparent 45%);
+    background: linear-gradient(0deg, black 10%, transparent 45%);
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .main__video::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url("../images/pattern.png");
   }
 }
 
